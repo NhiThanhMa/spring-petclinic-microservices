@@ -115,7 +115,7 @@ pipeline {
                     }
                     else {
                         CONTAINER_TAG = "${env.GIT_COMMIT.take(7)}"
-                        echo "Building all services for commit: ${CONTAINER_TAG}"
+                        echo "Building all changed services for commit: ${CONTAINER_TAG}"
                     }
 
                     def parallelStages = [:] // Initialize an empty map for parallel stages
@@ -152,7 +152,7 @@ pipeline {
                 script {
                     withCredentials([usernamePassword(credentialsId: 'github-token', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD')]) {
                         sh ''' 
-                            git clone https://$GIT_USERNAME:$GIT_PASSWORD@github.com/NhiThanhMa/devops_lab02_k8s_myproject.git
+                            git clone https://$GIT_USERNAME:$GIT_PASSWORD@github.com/NhiThanhMa/devops_lab02_k8s_myproject.git k8s
                             cd k8s
 
                             git config user.name "Jenkins"
@@ -233,8 +233,8 @@ pipeline {
                     echo "${nodeIP} eureka.${envPrefix}-${baseDomain}"
 
                     echo "Access your app:"
-                    echo "🔗 HTTP:  http://${envPrefix}-${baseDomain}:32080"
-                    echo "🔒 HTTPS: https://${envPrefix}-${baseDomain}:32443"
+                    echo "🔗 HTTP:  http://${envPrefix}-${baseDomain}:30080"
+                    echo "🔒 HTTPS: https://${envPrefix}-${baseDomain}:30443"
                 }
             }
         }
