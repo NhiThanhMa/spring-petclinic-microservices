@@ -9,6 +9,10 @@ pipeline {
         DOCKER_REGISTRY = "nhi256"
         SERVICES = "spring-petclinic-admin-server,spring-petclinic-api-gateway,spring-petclinic-config-server,spring-petclinic-discovery-server,spring-petclinic-customers-service,spring-petclinic-vets-service,spring-petclinic-visits-service,spring-petclinic-genai-service"
     }
+
+    parameters {
+        string(name: 'NODE_IP', defaultValue: '192.168.1.13', description: 'Worker node IP address')
+    }
     
     stages {
         stage('Detect Release') {
@@ -225,7 +229,7 @@ pipeline {
                 if (currentBuild.result != 'FAILED' && !CHANGED_SERVICES.isEmpty() && !env.CHANGE_ID && (env.TAG_NAME || env.BRANCH_NAME == 'main')) {
                     def baseDomain = "petclinic.cloud"
                     def envPrefix = env.TAG_NAME ? "staging" : "dev"
-                    def nodeIP = "192.168.1.12" // change to match the worker node's IP
+                    def nodeIP = params.NODE_IP // change to match the worker node's IP
 
                     echo "✅ Deployment to Kubernetes was successful with environment: ${envPrefix}"
                     echo "Add this to your /etc/hosts file:"
