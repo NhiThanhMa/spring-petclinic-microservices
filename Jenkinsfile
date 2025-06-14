@@ -42,7 +42,7 @@ pipeline {
                     def hasChangeRootFile = changedFiles.any {file ->
                         !env.SERVICES.split(",").any {service -> file.startsWith(service)} &&
                         !IGNORED_DIR.any {dir -> file.startsWith(dir)}
-                    }
+                    } 
                     
                     if (hasChangeRootFile){
                         CHANGED_SERVICES = env.SERVICES
