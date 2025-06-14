@@ -87,7 +87,7 @@ This project consists of several microservices:
 - **Config Server**: Centralized configuration management for all services.
 - **Discovery Server**: Eureka-based service registry.
 
-Each service has its own specific role and communicates via REST APIs.
+Each service has its own specific role and communicates via REST APIs. 
 
 
 ![Spring Petclinic Microservices screenshot](docs/application-screenshot.png)
