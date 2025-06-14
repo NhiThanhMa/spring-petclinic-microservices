@@ -59,7 +59,7 @@ available by default at http://localhost:8761.
 
 The `main` branch uses an Eclipse Temurin with Java 17 as Docker base image.
 
-*NOTE: Under MacOSX or Windows, make sure that the Docker VM has enough memory to run the microservices. The default settings
+*NOTE: Under MacOSX or Windows, make sure that the Docker VM has enough memory to run the microservices. The default settings 
 are usually not enough and make the `docker-compose up` painfully slow.*
 
 
