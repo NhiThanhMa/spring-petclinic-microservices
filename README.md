@@ -31,7 +31,7 @@ You can tell Config Server to use your local Git repository by using `native` Sp
 `-Dspring.profiles.active=native -DGIT_REPO=/projects/spring-petclinic-microservices-config`
 
 ## Starting services locally with docker-compose
-In order to start entire infrastructure using Docker, you have to build images by executing
+In order to start entire infrastructure using Docker, you have to build images by executing 
 ``bash
 ./mvnw clean install -P buildDocker
 ``
