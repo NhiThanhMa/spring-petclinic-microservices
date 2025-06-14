@@ -229,7 +229,7 @@ pipeline {
                 if (currentBuild.result != 'FAILED' && !CHANGED_SERVICES.isEmpty() && !env.CHANGE_ID && (env.TAG_NAME || env.BRANCH_NAME == 'main')) {
                     def baseDomain = "petclinic.cloud"
                     def envPrefix = env.TAG_NAME ? "staging" : "dev"
-                    def nodeIP = params.NODE_IP // change to match the worker node's IP
+                    def nodeIP = params.NODE_IP 
 
                     echo "✅ Deployment to Kubernetes was successful with environment: ${envPrefix}"
                     echo "Add this to your /etc/hosts file:"
