@@ -16,7 +16,7 @@ and the Eureka Service Discovery from the [Spring Cloud Netflix](https://github.
 Every microservice is a Spring Boot application and can be started locally using IDE or `../mvnw spring-boot:run` command.
 Please note that supporting services (Config and Discovery Server) must be started before any other application (Customers, Vets, Visits and API).
 Startup of Tracing server, Admin server, Grafana and Prometheus is optional.
-If everything goes well, you can access the following services at given location:   
+If everything goes well, you can access the following services at given location:    
 * Discovery Server - http://localhost:8761
 * Config Server - http://localhost:8888
 * AngularJS frontend (API Gateway) - http://localhost:8080
